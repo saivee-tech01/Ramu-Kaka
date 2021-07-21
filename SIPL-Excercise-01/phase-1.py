@@ -1,2 +1,2 @@
-Wlcm_Message="Welcome Mr. Ramu"
-print(Wlcm_Message)
+Message="Welcome Mr. Ramu"
+print(Message)
