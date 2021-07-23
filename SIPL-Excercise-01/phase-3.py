@@ -1,13 +1,14 @@
 def main():
-    data=open('customer-data.txt','w')
-    Customer_Name=input("Enter name of customer:")
-    Amount=input("Enter amount:")
-    Date=input("Enter date:")
+    with open('customer-data.txt','a+') as f:
 
-    data.write(Customer_Name)
-    data.write(Amount)
-    data.write(Date)
 
-    data.close()
+        Customer_Name=input("Enter name of customer:")
+        Amount=input("Enter amount:")
+        Date=input("Enter date:")
+
+        f.write(Customer_Name+','+Amount+','+Date+'\n')
+        f.close()
+
+        
 
 main()
