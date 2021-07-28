@@ -15,6 +15,3 @@ def createFile():
            
 
 createFile()
-        
-    
-    
