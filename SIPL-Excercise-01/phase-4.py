@@ -14,13 +14,11 @@ def total(Customer_Name):
 
 def details(Cust_name):
     infile=open('customer.dat','rb')
-    list=[]
+    
     data=pickle.load(infile)
-    temp=[data]
-    list.append(temp)
-    for i in list:
-        if list[0]==Cust_name:
-            print(list[2],"",list[3])    
+    if data[1]== Cust_name:
+        print(data[2],"",data[3]) 
+    infile.close()       
 
 
 
