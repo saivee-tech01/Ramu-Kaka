@@ -1,17 +1,20 @@
-import pickle
-def createFile():
-    file = open("customer.dat","ab")
-    n=int(input("Enter customers:"))
-    for i in range(n):
-        CustomerNo = int(input("Enter customer number: "))
-        Customer_Name = input("Enter customer Name: ")
+import json
+
+n=int(input("Enter value:"))
+customer={}
+
+for i in range(n):
+    name=input("Enter name:")
+    data=[]
+    amount=int(input("Enter amount:"))
+    date=input("Enter date:")
+    list=[amount,date]
+    data.append(list)
+    customer[name]=data
     
-        Amount = int(input("Enter amount: "))
-        Date =input("Enter date: ")
-        records = [CustomerNo, Customer_Name, Amount, Date]
-        pickle.dump(records, file)
+    
 
 
-           
 
-createFile()
+with open('customer.json','a+') as f:
+    j=json.dump(customer,f)
