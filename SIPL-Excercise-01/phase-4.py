@@ -1,33 +1,21 @@
-import pickle
-def total(Customer_Name):
-    infile = open("customer.dat","rb")
-    try:
-        total = 0
-        while True:
-            record = pickle.load(infile)
-            if record[1]==Customer_Name:
-                total += record[2]
-                
-    except EOFError:
-        pass
-    return total
+import json
+name=input("Enter customer name to search:")
+with open('customer.json','r') as outfile:
+        j1=json.load(outfile)
 
-def details(Cust_name):
-    infile=open('customer.dat','rb')
-    
-    data=pickle.load(infile)
-    if data[1]== Cust_name:
-        print(data[2],"",data[3]) 
-    infile.close()       
+def display_customer_details():
+    if name in j1.keys():
+        print("Details:\n",j1[name])
 
+def display_total():
+    total=100
+    if name in j1.keys():
+        total=total+j1[name][0][0]
+        print("Total:",total)
 
+def main():
+    display_total()
+    display_customer_details()
 
-
-
-Customer_Name = input('Enter customer name to search: ')
-n=total(Customer_Name)
-print("Total:",n)
-details(Customer_Name)
-
-    
+main()
 
