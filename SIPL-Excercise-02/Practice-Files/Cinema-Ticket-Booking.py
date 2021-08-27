@@ -21,8 +21,6 @@ gender_choice = Text(app, text="Seat Location", grid=[0,3], align="left")
 row_choice = ButtonGroup(app, options=[ ["Front", "F"], ["Middle", "M"],["Back", "B"] ],
 selected="M", horizontal=True, grid=[1,3], align="left")
 
-
-
 def do_booking():
     info("Booking", "Thank you for booking")
     print( film_choice.value )
